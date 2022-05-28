@@ -1,19 +1,23 @@
 {
-  "name": "ecommerce",
+  "name": "myecommerce_project",
   "version": "1.0.0",
-  "description": "",
+  "description": "ecommerce app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BahureVishal01/ecommerce.git"
-  },
-  "author": "",
+  "author": "vishal",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BahureVishal01/ecommerce/issues"
-  },
-  "homepage": "https://github.com/BahureVishal01/ecommerce#readme"
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "test": "^0.6.0"
+  }
 }
