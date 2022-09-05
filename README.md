@@ -1,6 +1,5 @@
 # ecommerce_app link - https://backend-applicationn.herokuapp.com/
 # Node.js based eCommerceApp
-## _Backend code base_
 
 ## Features
 *  REST APIs for categories
