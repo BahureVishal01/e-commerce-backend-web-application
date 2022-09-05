@@ -1,5 +1,5 @@
-# ecommerce_app link - https://backend-applicationn.herokuapp.com/
-# Node.js based eCommerceApp
+
+# Node.js based backend eCommerceApp
 
 ## Features
 *  REST APIs for categories
@@ -18,3 +18,4 @@
 - JWT
 - Jest
 
+# ecommerce_app link - https://backend-applicationn.herokuapp.com/
