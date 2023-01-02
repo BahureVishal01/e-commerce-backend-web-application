@@ -15,6 +15,6 @@ function listCategories(req, res){
             categories: result 
         })
     })
-}
+};
 
 module.exports = {listCategories};

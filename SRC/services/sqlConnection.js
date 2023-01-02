@@ -16,6 +16,6 @@ function executeQuery(sql, data, callback){
          });
         }
     })
-}
+};
 
 module.exports = {executeQuery};

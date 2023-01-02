@@ -13,7 +13,6 @@ function mockResponse(){
     res.status = jestMock.fn().mockReturnValue(res);
     res.json = jestMock.fn().mockReturnValue(res);
     return res;
-}
-
+};
 mockRequest();
 module.exports = {mockRequest, mockResponse};

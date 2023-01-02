@@ -1,25 +1,26 @@
 const sqlConnection = require("../services/sqlConnection");
 
-function listProducts(data, callback){
+function listProducts( callback){
     let sql = "SELECT ID as productId, Name as name, Price as price FROM Products ";
     let values = [];
-    if(data.categoryId){
-        sql += " WHERE CategoryId = ?";
-        values.push(data.categoryId);
-        if(data.minPrice){
-            sql += " AND Price >= ?";
-            values.push(data.minPrice);
-        }else if(data.maxPrice){
-            sql += " AND Price <= ?"
-            values.push(data.maxPrice);
-        }
-    }else if(data.minPrice){
-        sql += " WHERE Price >= ?";
-        values.push(data.minPrice);
-    }else if(data.maxPrice){
-        sql += " WHERE Price <= ?";
-        values.push(data.maxPrice);
-    }
+    
+    // if(data.categoryId){
+    //     sql += " WHERE CategoryId = ?";
+    //     values.push(data.categoryId);
+    //     if(data.minPrice){
+    //         sql += " AND Price >= ?";
+    //         values.push(data.minPrice);
+    //     }else if(data.maxPrice){
+    //         sql += " AND Price <= ?"
+    //         values.push(data.maxPrice);
+    //     }
+    // }else if(data.minPrice){
+    //     sql += " WHERE Price >= ?";
+    //     values.push(data.minPrice);
+    // }else if(data.maxPrice){
+    //     sql += " WHERE Price <= ?";
+    //     values.push(data.maxPrice);
+    // }
     sqlConnection.executeQuery(sql, values, function(err, result){
         callback(err, result);
     });

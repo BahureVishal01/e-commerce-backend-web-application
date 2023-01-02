@@ -10,7 +10,8 @@ app.get('/', (req, res) =>{
     res.send('Hello world');
 });
 
+
 app.use('/api', apiRouter);
 app.listen(process.env.PORT ||port, () =>{
     console.log("server is started successfully");
-});
+}); 

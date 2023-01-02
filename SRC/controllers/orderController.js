@@ -115,4 +115,4 @@ module.exports = {
     createOrder,
     getOrderDetails,
     editOrderDetails
-}
+};

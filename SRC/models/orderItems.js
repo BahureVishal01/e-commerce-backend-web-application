@@ -39,7 +39,6 @@ function deleteOrderItems(data, callback){
         callback(err, result);
     })
 }
-
 function getOrderItems(data, callback){
     let sql = ` SELECT * FROM OrderItems
                 WHERE

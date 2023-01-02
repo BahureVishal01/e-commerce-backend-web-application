@@ -4,7 +4,6 @@ const categoryModel = require("../../SRC/models/category");
 const categoryController = require("../../SRC/controllers/categoryController");
 
 
-
 const testPayload = [
     {
         "categoryId": 1,

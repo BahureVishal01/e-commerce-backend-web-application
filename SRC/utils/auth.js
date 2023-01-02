@@ -5,8 +5,7 @@ function newToken(user){
     return jwt.sign({id: user.id}, 'relevel',{
         expiresIn: '1d'
     })
-}
-
+};
 function verifyToken(token){
 
     try{
@@ -16,6 +15,6 @@ function verifyToken(token){
        console.log(err);
        return;
     }
-}
+};
 
 module.exports = {newToken, verifyToken}

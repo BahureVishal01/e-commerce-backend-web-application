@@ -5,8 +5,8 @@ const { response } = require("express");
 
 function signup(data, callback) {
     let sql = `INSERT INTO Users
-               (Username, Password, CreatedAt, UpdatedAt)
-               VALUES ( ? , ? , now(), now())
+               (Username, UserType, Password, CreatedAt, UpdatedAt)
+               VALUES ( ? , 0, ?, now(), now())
     `;
     let values = [];
     values.push(data.username);
@@ -17,19 +17,22 @@ function signup(data, callback) {
 };
 
 function strongSignup(data, callback) {
+    console.log("line20");
     let sql = `INSERT INTO Users
-               (Username, Password, CreatedAt, UpdatedAt)
-               VALUES ( ?, ?, now(), now())
+               (Username, UserType, Password, CreatedAt, UpdatedAt)
+               VALUES ( ?, 0,  ?,  now(), now())
                `;
     let values = [];
     values.push(data.username);
     bcrypt.hash(data.password, 8, function (err, hash) {
+    console.log("line28")
         if (err) {
             console.log(err);
             return;
         }
         values.push(hash);
         sqlConnection.executeQuery(sql, values, function (err, result) {
+            console.log("string");
             callback(err, result);
         })
     })
@@ -112,7 +115,7 @@ module.exports = {
     signup,
     login,
     getUsersSignupDetails,
-    strongSignup,
+   strongSignup,
     strongLogin,
     getUserById
 };

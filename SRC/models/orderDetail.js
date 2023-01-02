@@ -14,7 +14,6 @@ function listOrderDetails(data, callback){
         callback(err, result);
     })
 }
-
 function findOrderByUser(data, callback){
     let sql = ` SELECT ID, Total as total
                 FROM OrderDetails
@@ -75,7 +74,6 @@ function getOrderDetails(data, callback){
         callback(err, result);
     });
 }
-
 
 
 module.exports = {

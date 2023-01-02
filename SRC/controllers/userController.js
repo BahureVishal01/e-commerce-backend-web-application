@@ -1,6 +1,7 @@
 const { response } = require("express");
 const User = require("../models/user");
 const auth = require("../utils/auth");
+const jwt = require("jsonwebtoken");
 function signup(req, res) {
     let data = req.body;
     if (data.username && data.password) {
@@ -17,6 +18,7 @@ function signup(req, res) {
                     success: false,
                     message: "User already exists"
                 });
+            
             } else {
                 User.strongSignup(data, function (err, result) {
                     if (err) {
@@ -30,9 +32,10 @@ function signup(req, res) {
                         message: "Successfully signed up",
                         success: true
                     });
-                });
+                
+            })
             }
-        });
+         });
     } else {
         return res.status(400).send({
             message: "Username or password is missing",
@@ -84,7 +87,7 @@ function isAuthenticated(req, res, next){
             success: false
         })
     }
-    User.getUserById(response.id, function(err, result){
+    User.getUserById(response._id, function(err, result){
         if(err){
             return res.status(401).send({
                 message: "Invalid user",

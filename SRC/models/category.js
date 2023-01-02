@@ -6,6 +6,6 @@ function listCategories(callback){
     sqlConnection.executeQuery(sql, data, function(err, result){
         callback(err, result);
     });
-}
+};
 
 module.exports = {listCategories};
